@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Lastname:</strong>
+  <%= @pil.lastname %>
+</p>
+
+<p>
+  <strong>Firstname:</strong>
+  <%= @pil.firstname %>
+</p>
+
+<p>
+  <strong>Middlename:</strong>
+  <%= @pil.middlename %>
+</p>
+
+<%= link_to 'Edit', edit_pil_path(@pil) %> |
+<%= link_to 'Back', pils_path %>

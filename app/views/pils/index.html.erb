@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Pils</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Lastname</th>
+      <th>Firstname</th>
+      <th>Middlename</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pils.each do |pil| %>
+      <tr>
+        <td><%= pil.lastname %></td>
+        <td><%= pil.firstname %></td>
+        <td><%= pil.middlename %></td>
+        <td><%= link_to 'Show', pil %></td>
+        <td><%= link_to 'Edit', edit_pil_path(pil) %></td>
+        <td><%= link_to 'Destroy', pil, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pil', new_pil_path %>
