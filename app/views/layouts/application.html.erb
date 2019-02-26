@@ -14,7 +14,7 @@
           src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.1/jquery.xdomainrequest.min.js"></script>
   <![endif]-->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/suggestions-jquery@18.11.1/dist/js/jquery.suggestions.min.js"></script>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
@@ -22,27 +22,33 @@
 <!-- <Заголовок> -->
 <%= render "shared/header" %>
 
-<!--  <div class="container-fluid">-->
-<!--    <div class="row">-->
-<!--      <div class="col-sm-3 col-md-2">-->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-3 col-md-2">
 
-<!-- <Левое меню> -->
+      <!-- <Левое меню> -->
 <%#= render "shared/leftMenu" %>
-<!--      </div>-->
-<!--      <div class="col-sm-9 col-md-10">-->
-<!--        <div class="container-fluid">-->
+    </div>
+    <!--      <div class="col-sm-9 col-md-10">-->
+    <!--        <div class="container-fluid">-->
 <%#= yield %>
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
+    <!--        </div>-->
+    <!--      </div>-->
+    <!--    </div>-->
+    <!--  </div>-->
 
 
-<div class="container  bg-success">
-  <%= yield %>
-  <h1>
+    <div class="col-12 col-sm-9 col-md-10">
+      <div class="container-fluid bg-success">
+        <%= yield %>
+        <h1>
 
-  </h1>
+        </h1>
+
+      </div>
+    </div>
+  </div>
 </div>
 </body>
+<!--bg-success-->
 </html>
