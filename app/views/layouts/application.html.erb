@@ -1,40 +1,41 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Anketa</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>Anketa</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-  </head>
+</head>
 
-  <body>
+<body>
 
-  <!-- <Заголовок> -->
-  <%= render "shared/header" %>
+<!-- <Заголовок> -->
+<%= render "shared/header" %>
 
 <!--  <div class="container-fluid">-->
 <!--    <div class="row">-->
 <!--      <div class="col-sm-3 col-md-2">-->
 
-        <!-- <Левое меню> -->
-        <%#= render "shared/leftMenu" %>
+<!-- <Левое меню> -->
+<%#= render "shared/leftMenu" %>
 <!--      </div>-->
 <!--      <div class="col-sm-9 col-md-10">-->
 <!--        <div class="container-fluid">-->
-          <%#= yield %>
+<%#= yield %>
 <!--        </div>-->
 <!--      </div>-->
 <!--    </div>-->
 <!--  </div>-->
 
 
+<div class="container  bg-success">
+  <%= yield %>
+  <h1>
 
-  <div class="container  bg-success " >
-
-    <%= yield %>
-    <div>
-  </body>
+  </h1>
+  </div>
+</body>
 </html>
