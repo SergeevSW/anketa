@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_25_101149) do
+ActiveRecord::Schema.define(version: 2019_02_26_201513) do
 
   create_table "pils", force: :cascade do |t|
     t.string "lastname"
@@ -18,6 +18,15 @@ ActiveRecord::Schema.define(version: 2019_02_25_101149) do
     t.string "middlename"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "email"
+    t.string "passportSeries"
+    t.string "passportNumber"
+    t.date "passportIssuedDate"
+    t.string "passportIssuedCode"
+    t.string "passportIssuedBy"
+    t.date "birthDate"
+    t.string "passportBirthPlace"
+    t.string "passportRegion"
   end
 
 end
