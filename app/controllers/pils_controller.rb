@@ -24,7 +24,8 @@ class PilsController < ApplicationController
   # POST /pils
   # POST /pils.json
   def create
-    @pil = Pil.new(pil_params)
+    @pil = Pil.new(pil_params.merge(:drafttoken => SecureRandom.hex(10)))
+
 
     respond_to do |format|
       if @pil.save
@@ -70,7 +71,7 @@ class PilsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def pil_params
-    params.require(:pil).permit(:lastname, :firstname, :middlename, :email, :passportSeries, :passportNumber, :passportIssuedDate, :passportIssuedCode, :passportIssuedBy, :birthDate, :passportBirthPlace, :passportRegion)
+    params.require(:pil).permit(:lastname, :firstname, :middlename, :email, :passportSeries, :passportNumber, :passportIssuedDate, :passportIssuedCode, :passportIssuedBy, :birthDate, :passportBirthPlace, :passportRegion, :workinn, :drafttoken)
 
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_26_201513) do
+ActiveRecord::Schema.define(version: 2019_02_26_213653) do
 
   create_table "pils", force: :cascade do |t|
     t.string "lastname"
@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(version: 2019_02_26_201513) do
     t.date "birthDate"
     t.string "passportBirthPlace"
     t.string "passportRegion"
+    t.string "workinn"
+    t.string "drafttoken"
   end
 
 end

@@ -100,6 +100,20 @@
     </div>
   </div>
 
+  <div class="form-group row ">
+    <%= form.label :workinn, class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+      <%= form.text_field :workinn, class: "form-control" , placeholder: "Введите название, адрес, ИНН или ОГРН"%>
+    </div>
+  </div>
+
+  <div class="form-group row ">
+    <%= form.label :drafttoken, class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+      <%= form.text_field :drafttoken, class: "form-control" %>
+    </div>
+  </div>
+
 
   <div class="actions">
     <%= form.submit %>
@@ -145,6 +159,18 @@
         count: 3,
         // params: {parts: ["domain"]},
         suggest_local: false,
+
+        /* Вызывается, когда пользователь выбирает одну из подсказок */
+        onSelect: function(suggestion) {
+            console.log(suggestion);
+        }
+    });
+
+    $("#pil_workinn").suggestions({
+        token: "530b45ff577449be7b0612c14e78a826fd768f21",
+        type: "PARTY",
+        count: 3,
+
 
         /* Вызывается, когда пользователь выбирает одну из подсказок */
         onSelect: function(suggestion) {
