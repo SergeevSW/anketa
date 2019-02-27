@@ -20,7 +20,7 @@
         <td><%= pil.middlename %></td>
         <td><%= link_to 'Открыть', pil, :class => "btn btn-secondary"%></td>
         <td></td>
-        <td><%= link_to 'Редактировать', edit_pil_path(pil), :class => "btn btn btn-secondary" %></td>
+        <td><%= link_to 'Редактировать', edit_pil_path(pil,:step => "1"), :class => "btn btn btn-secondary" %></td>
         <td></td>
         <td><%= link_to 'Удалить', pil, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %></td>
       </tr>

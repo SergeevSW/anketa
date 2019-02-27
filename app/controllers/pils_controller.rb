@@ -41,10 +41,23 @@ class PilsController < ApplicationController
   # PATCH/PUT /pils/1
   # PATCH/PUT /pils/1.json
   def update
+
+
+    puts('======',params[:step])
+    params[:step] ||= "1"
     respond_to do |format|
       if @pil.update(pil_params)
-        format.html {redirect_to @pil, notice: 'Pil was successfully updated.'}
-        format.json {render :show, status: :ok, location: @pil}
+        format.html {
+          # redirect_to @pil, notice: 'Pil was successfully updated.'
+          if params[:step] == "1"
+            redirect_to edit_pil_path(@pil,:step => "2")
+            puts('-----',params[:step])
+          else
+            redirect_to @pil, notice: 'Pil was successfully updated.'
+            puts('+++++',params[:step])
+          end
+                    }
+        # format.json {render :show, status: :ok, location: @pil}
       else
         format.html {render :edit}
         format.json {render json: @pil.errors, status: :unprocessable_entity}
