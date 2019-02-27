@@ -1,6 +1,15 @@
 class PilsController < ApplicationController
   before_action :set_pil, only: [:show, :edit, :update, :destroy]
 
+
+  def report
+    @pils = Pil.all
+  end
+
+  def report_src
+
+  end
+
   # GET /pils
   # GET /pils.json
   def index

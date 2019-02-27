@@ -1,21 +1,31 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Lastname:</strong>
-  <%= @pil.lastname %>
-</p>
 
-<p>
-  <strong>Firstname:</strong>
-  <%= @pil.firstname %>
-</p>
-
-<p>
-  <strong>Middlename:</strong>
+<strong>ФИО:</strong>
+  <%= @pil.lastname %>  <%= @pil.lastname %>
   <%= @pil.middlename %>
+<br>
+
+<strong>Паспорт:</strong>
+<%= @pil.passportSeries %> <%= @pil.passportNumber %>
+<br>
+
+<strong>Продукт:</strong>
+<%= @pil.product %>
+
+<br>
+
+<strong>Лимит:</strong>
+<%= @pil.limit %>
 </p>
 
-<%= link_to 'Редактировать', edit_pil_path(@pil) , :class => " btn btn-secondary"%> |
+<%= link_to 'Редактировать', edit_pil_path(@pil) , :class => " btn btn-info"%> |
 <%#= link_to 'Вернутся на главную', pils_path , {:class => "btn btn-info"}%>
 
-<%= link_to 'Выбрать доставку', edit_pil_path(@pil,:step => "delivery"), :class => "btn btn-secondary" %>
+<%= link_to 'Выбрать доставку', edit_pil_path(@pil,:step => "delivery"), :class => "btn btn-primary" %>
+
+
+<br>
+
+<br>
+<%= link_to 'Для обратной интеграции: Указать результаты по заявке', edit_pil_path(@pil,:step => "postback"), :class => "btn btn-warning " %>

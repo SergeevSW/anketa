@@ -1,0 +1,22 @@
+<h3>Всего заявок : <%=@pils.count %> </h3>
+
+<h4>     (органика: <%=Pil.where(utm_source: [nil, ""]).count %>)</h4>
+<h4>     (Контекст: <%=Pil.where(utm_medium: "cpc").count %>)</h4>
+<h4>     (Поиск: <%=Pil.where(utm_medium: "search").count %>)</h4>
+
+
+
+
+<h3>Одобрено заявок : <%=@pils.where(isAccepted: 1).count %></h3>
+
+<h4>     (органика: <%=Pil.where(utm_source: [nil, ""],isAccepted: 1).count %>)</h4>
+<h4>     (Контекст: <%=Pil.where(utm_medium: "cpc",isAccepted: 1).count %>)</h4>
+<h4>     (Поиск: <%=Pil.where(utm_medium: "search",isAccepted: 1).count %>)</h4>
+
+
+<h3>Выдано : <%=@pils.where(isDeal: 1).count %></h3>
+
+<h4>     (органика: <%=Pil.where(utm_source: [nil, ""],isDeal: 1).count %>)</h4>
+<h4>     (Контекст: <%=Pil.where(utm_medium: "cpc",isDeal: 1).count %>)</h4>
+<h4>     (Поиск: <%=Pil.where(utm_medium: "search",isDeal: 1).count %>)</h4>
+

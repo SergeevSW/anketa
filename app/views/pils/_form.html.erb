@@ -3,7 +3,7 @@
   <% params[:step] ||= '1' %>
 
   <h6>
-    <%= params %>
+    <% params %>
   </h6>
 </div>
 
@@ -23,10 +23,12 @@
 
 
   <% if params[:step] == "1" %>
-
+    <%= form.hidden_field :utm_source, value: params[:utm_source] %>
+    <%= form.hidden_field :utm_medium, value: params[:utm_medium] %>
+    <%= form.hidden_field :utm_campaign, value: params[:utm_campaign] %>
 
     <div class="form-group row ">
-      <%= form.label "Фамилия", class: "col-sm-2 col-form-label" %>
+      <%= form.label "Фамилия", class: "col-sm-2 col-form-label " %>
       <div class="col-sm-10">
         <%= form.text_field :lastname, class: "form-control", placeholder: "Иванов" %>
         <small class="form-text text-muted col-form-label">
@@ -219,7 +221,31 @@
     </div>
   <% end %>
 
+  <% if params[:step] == "postback" %>
+  <div class="form-group row ">
+    <%= form.label "Флаг одобрения", class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+      <%= form.check_box :isAccepted, class: ""%>
+    </div>
+  </div>
 
+  <div class="form-group row ">
+    <%= form.label "Флаг выдачи", class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+      <%= form.check_box :isDeal, class: ""%>
+    </div>
+
+  </div>
+
+  <div class="form-group row ">
+    <%= form.label "Дата выдачи", class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+      <%= form.date_field :dealDate, class: "form-control", placeholder: "ГГГГ-ММ-ДД" %>
+
+    </div>
+  </div>
+
+    <% end %>
 
 
 
@@ -228,6 +254,7 @@
     <%= hidden_field_tag 'step', params[:step] %>
   </div>
 
+  <% if params[:step] != "postback" %>
   <div class="progress">
     <% if params[:step] == '1'
          chanse = '40'
@@ -242,13 +269,14 @@
          chanse = '99'
        end
     %>
+
     <div class="progress-bar progress-bar-striped" role="progressbar" style="width: <%=chanse.to_i %>%" aria-valuenow=<%= chanse %> aria-valuemin="0" aria-valuemax="100">
 
 
       <%= 'Ваши шансы на продукт' %> <%= chanse %> <%= "%" %>
     </div>
   </div>
-
+  <% end %>
   <div>
     <% if params[:step] == '1'
          sub_text = 'Далее'
@@ -258,6 +286,8 @@
          sub_text = 'Отправить заявку'
        elsif params[:step] == 'delivery'
          sub_text = 'Готово'
+         else
+         sub_text = 'Готово'
        end
 
 
@@ -265,6 +295,7 @@
     <%= form.submit sub_text, :class => "btn btn-primary btn-block" %>
   </div>
 <% end %>
+<br>
 
 <script type="text/javascript">
     $("#pil_lastname").suggestions({

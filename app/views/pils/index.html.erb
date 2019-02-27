@@ -8,9 +8,9 @@
   <table class = "table">
     <tr class="border">
       <th>ФИО</th>
-      <th>2</th>
-      <th>3</th>
-      <th>4</th>
+      <th></th>
+      <th></th>
+      <th></th>
       <th colspan="1"></th>
     </tr>
   </thead>
@@ -19,10 +19,9 @@
     <% @pils.each do |pil| %>
       <tr class="border">
         <td><%= pil.lastname %> <%= pil.firstname%> <%=  pil.middlename%></td>
-        <td><%= link_to 'Просмотр', pil_path(pil,:step => "1"), :class => "btn btn-sm btn-secondary"%></td>
-
-        <td><%= link_to 'Выбрать доставку', edit_pil_path(pil,:step => "delivery"), :class => "btn btn-sm btn-secondary" %></td>
-        <td><%= link_to 'Удалить', pil, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-sm btn-danger" %></td>
+        <td><%= link_to ' ', pil_path(pil,:step => "1"), :class => " glyphicon glyphicon-eye-open"%></td>
+        <td><%= link_to ' ', edit_pil_path(pil,:step => "delivery"), :class => "glyphicon glyphicon-calendar" %></td>
+        <td><%= link_to ' ', pil, method: :delete, data: { confirm: 'Действительно удалить заявку?' }, :class => "glyphicon glyphicon-remove" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +29,8 @@
 </div>
 <br>
 
-<%= link_to 'Новая заявка', new_pil_path, :class => "btn btn-primary"%>
+<%= link_to 'Новая заявка органика', new_pil_path(:step => "1"), :class => "btn btn-primary btn-block"%>
+<br>
+<%= link_to 'Новая заявка google контекст', new_pil_path(:utm_source => "google",:utm_medium => "cpc"), :class => "btn btn btn-primary btn-block"%>
+<br>
+<%= link_to 'Новая заявка yandex поиск', new_pil_path(:utm_source => "yandex",:utm_medium => "search"), :class => "btn btn btn-primary btn-block"%>
