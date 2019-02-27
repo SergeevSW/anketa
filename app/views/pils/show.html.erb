@@ -16,5 +16,6 @@
 </p>
 
 <%= link_to 'Редактировать', edit_pil_path(@pil) , :class => " btn btn-secondary"%> |
-<%= link_to 'Вернутся на главную', pils_path , :class => "btn btn-secondary"%>
-<%= link_to 'Указать дату доставки', edit_pil_path(@pil,:step => "delivery"), :class => "btn btn-secondary" %>
+<%#= link_to 'Вернутся на главную', pils_path , {:class => "btn btn-info"}%>
+
+<%= link_to 'Выбрать доставку', edit_pil_path(@pil,:step => "delivery"), :class => "btn btn-secondary" %>

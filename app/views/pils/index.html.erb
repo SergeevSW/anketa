@@ -1,35 +1,33 @@
 <p id="notice"><%= notice %></p>
 
 
-  <h2>Кредит наличными</h2>
+  <h2>Заявки на продукт</h2>
 
 
-<table>
-  <thead>
+<div class="table-responsive">
+  <table class = "table">
     <tr class="border">
-      <th>Ф</th>
-      <th>И</th>
-      <th>О</th>
-      <th colspan="3"></th>
+      <th>ФИО</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th colspan="1"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @pils.each do |pil| %>
       <tr class="border">
-        <td><%= pil.lastname %></td>
-        <td><%= pil.firstname %></td>
-        <td><%= pil.middlename %></td>
-        <td><%= link_to 'Открыть', pil_path(pil,:step => "1"), :class => "btn btn-secondary"%></td>
-        <td></td>
-        <td><%= link_to 'Редактировать', edit_pil_path(pil,:step => "1"), :class => "btn btn btn-secondary" %></td>
-        <td></td>
-        <td><%= link_to 'Удалить', pil, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %></td>
+        <td><%= pil.lastname %> <%= pil.firstname%> <%=  pil.middlename%></td>
+        <td><%= link_to 'Просмотр', pil_path(pil,:step => "1"), :class => "btn btn-sm btn-secondary"%></td>
+
+        <td><%= link_to 'Выбрать доставку', edit_pil_path(pil,:step => "delivery"), :class => "btn btn-sm btn-secondary" %></td>
+        <td><%= link_to 'Удалить', pil, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-sm btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+</div>
 <br>
 
 <%= link_to 'Новая заявка', new_pil_path, :class => "btn btn-primary"%>
