@@ -29,7 +29,9 @@ class PilsController < ApplicationController
 
     respond_to do |format|
       if @pil.save
-        format.html {redirect_to @pil, notice: 'Pil was successfully created.'}
+        format.html {redirect_to edit_pil_path(@pil,:step => "2")
+          # redirect_to @pil, notice: 'Pil was successfully created.'
+          }
         format.json {render :show, status: :created, location: @pil}
       else
         format.html {render :new}
@@ -41,9 +43,6 @@ class PilsController < ApplicationController
   # PATCH/PUT /pils/1
   # PATCH/PUT /pils/1.json
   def update
-
-
-    puts('======',params[:step])
     params[:step] ||= "1"
     respond_to do |format|
       if @pil.update(pil_params)
@@ -51,10 +50,8 @@ class PilsController < ApplicationController
           # redirect_to @pil, notice: 'Pil was successfully updated.'
           if params[:step] == "1"
             redirect_to edit_pil_path(@pil,:step => "2")
-            puts('-----',params[:step])
           else
-            redirect_to @pil, notice: 'Pil was successfully updated.'
-            puts('+++++',params[:step])
+            redirect_to @pil, notice: 'Заявка успешно заполнена'
           end
                     }
         # format.json {render :show, status: :ok, location: @pil}
@@ -68,9 +65,10 @@ class PilsController < ApplicationController
   # DELETE /pils/1
   # DELETE /pils/1.json
   def destroy
+    puts("destroy")
     @pil.destroy
     respond_to do |format|
-      format.html {redirect_to pils_url, notice: 'Pil was successfully destroyed.'}
+      format.html {redirect_to pils_url, notice: 'Заявка успешно удалена'}
       format.json {head :no_content}
     end
   end
@@ -84,7 +82,7 @@ class PilsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def pil_params
-    params.require(:pil).permit(:lastname, :firstname, :middlename, :email, :passportSeries, :passportNumber, :passportIssuedDate, :passportIssuedCode, :passportIssuedBy, :birthDate, :passportBirthPlace, :passportRegion, :workinn, :drafttoken)
+    params.require(:pil).permit(:lastname, :firstname, :middlename, :email, :passportSeries, :passportNumber, :passportIssuedDate, :passportIssuedCode, :passportIssuedBy, :birthDate, :passportBirthPlace, :passportRegion, :workinn, :drafttoken,:utm_source,:utm_medium,:utm_campaign,:product,:limit,:deliveryType,:deliveryDate,:deliveryAdress,:dopDoc1,:dopDoc2,:isAccepted,:isDeal,:dealDate)
 
   end
 end

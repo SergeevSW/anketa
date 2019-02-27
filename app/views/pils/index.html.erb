@@ -18,7 +18,7 @@
         <td><%= pil.lastname %></td>
         <td><%= pil.firstname %></td>
         <td><%= pil.middlename %></td>
-        <td><%= link_to 'Открыть', pil, :class => "btn btn-secondary"%></td>
+        <td><%= link_to 'Открыть', new_pil_path(pil,:step => "1"), :class => "btn btn-secondary"%></td>
         <td></td>
         <td><%= link_to 'Редактировать', edit_pil_path(pil,:step => "1"), :class => "btn btn btn-secondary" %></td>
         <td></td>

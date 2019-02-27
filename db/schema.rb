@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_26_213653) do
+ActiveRecord::Schema.define(version: 2019_02_27_102012) do
 
   create_table "pils", force: :cascade do |t|
     t.string "lastname"
@@ -29,6 +29,19 @@ ActiveRecord::Schema.define(version: 2019_02_26_213653) do
     t.string "passportRegion"
     t.string "workinn"
     t.string "drafttoken"
+    t.string "product"
+    t.integer "limit"
+    t.string "deliveryType"
+    t.date "deliveryDate"
+    t.string "deliveryAdress"
+    t.boolean "dopDoc1"
+    t.boolean "dopDoc2"
+    t.boolean "isAccepted"
+    t.boolean "isDeal"
+    t.date "dealDate"
+    t.string "utm_source"
+    t.string "utm_medium"
+    t.string "utm_campaign"
   end
 
 end
