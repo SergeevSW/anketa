@@ -50,6 +50,8 @@ class PilsController < ApplicationController
           # redirect_to @pil, notice: 'Pil was successfully updated.'
           if params[:step] == "1"
             redirect_to edit_pil_path(@pil,:step => "2")
+          elsif params[:step] == "2"
+            redirect_to edit_pil_path(@pil,:step => "3")
           else
             redirect_to @pil, notice: 'Заявка успешно заполнена'
           end

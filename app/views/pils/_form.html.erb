@@ -1,6 +1,6 @@
 <div>
 
-    <% params[:step] ||= '1' %>
+  <% params[:step] ||= '1' %>
 
   <h6>
     <%= params %>
@@ -22,200 +22,202 @@
   <% end %>
 
 
-  <%if params[:step]== "1" %>
+  <% if params[:step] == "1" %>
 
 
-  <div class="form-group row ">
-    <%= form.label "Фамилия", class: "col-sm-2 col-form-label" %>
-    <div class="col-sm-10">
-      <%= form.text_field :lastname, class: "form-control" ,placeholder: "Иванов"%>
-      <small class="form-text text-muted col-form-label">
-        Это тестовая форма, не указывайте реальные данные. Поле содержит автоподстановку
-      </small>
-    </div>
-  </div>
-
-  <div class="form-group row ">
-    <%= form.label "Имя", class: "col-sm-2 col-form-label" %>
-    <div class="col-sm-10">
-      <%= form.text_field :firstname, class: "form-control" ,placeholder: "Иван"%>
-      <small  class="form-text text-muted col-form-label">
-        Это тестовая форма, не указывайте реальные данные. Поле содержит автоподстановку
-      </small>
-    </div>
-  </div>
-
-  <div class="form-group row ">
-    <%= form.label "Отчество", class: "col-sm-2 col-form-label" %>
-    <div class="col-sm-10">
-      <%= form.text_field :middlename, class: "form-control" ,placeholder: "Иванович"%>
-
-    <small  class="form-text text-muted col-form-label">
-      Это тестовая форма, не указывайте реальные данные. Поле содержит автоподстановку
-    </small>
-    </div>
-  </div>
-
-  <div class="form-group row">
-    <%= form.label :email, class: "col-sm-2 col-form-label" %>
-    <div class="col-sm-10">
-      <%= form.email_field :email, class: "form-control ", placeholder: "ivanov.ivan@mail.com" %>
-
-      <small  class="form-text text-muted col-form-label">
-        Это тестовая форма, не указывайте реальные данные. Поле с типом = email и Клавиатура телефона должна
-        адаптироватся.
-      </small>
-    </div>
-  </div>
-    <%end %>
-
-  <%if params[:step]== "2" %>
-  <div class="form-group row ">
-    <%= form.label "Серия Паспорта", class: "col-sm-2 col-form-label" %>
-    <div class="col-sm-10">
-      <%= form.text_field :passportSeries, class: "form-control" , placeholder: "9999"%>
-      <small  class="form-text text-muted col-form-label">
-        Это тестовая форма, не указывайте реальные данные.
-      </small>
-    </div>
-  </div>
-
-  <div class="form-group row ">
-    <%= form.label "Номер паспорта", class: "col-sm-2 col-form-label" %>
-    <div class="col-sm-10">
-      <%= form.text_field :passportNumber, class: "form-control", placeholder: "123456" %>
-      <small  class="form-text text-muted col-form-label">
-        Это тестовая форма, не указывайте реальные данные.
-      </small>
-    </div>
-  </div>
-
-  <div class="form-group row ">
-    <%= form.label "Дата выдачи паспорта", class: "col-sm-2 col-form-label" %>
-    <div class="col-sm-10">
-      <%= form.date_field :passportIssuedDate, class: "form-control" , placeholder: "ГГГГ-ММ-ДД"%>
-      <small  class="form-text text-muted col-form-label">
-        Не указывайте реальные данные. Календарь должен быть нативным
-      </small>
+    <div class="form-group row ">
+      <%= form.label "Фамилия", class: "col-sm-2 col-form-label" %>
+      <div class="col-sm-10">
+        <%= form.text_field :lastname, class: "form-control", placeholder: "Иванов" %>
+        <small class="form-text text-muted col-form-label">
+          Это тестовая форма, не указывайте реальные данные. Поле содержит автоподстановку
+        </small>
+      </div>
     </div>
 
-  </div>
-
-  <div class="form-group row ">
-    <%= form.label "Код подразделения", class: "col-sm-2 col-form-label" %>
-    <div class="col-sm-10">
-      <%= form.text_field :passportIssuedCode, class: "form-control", placeholder: "999-001" %>
-      <small  class="form-text text-muted col-form-label">
-        Не указывайте реальные данные.
-      </small>
+    <div class="form-group row ">
+      <%= form.label "Имя", class: "col-sm-2 col-form-label" %>
+      <div class="col-sm-10">
+        <%= form.text_field :firstname, class: "form-control", placeholder: "Иван" %>
+        <small class="form-text text-muted col-form-label">
+          Это тестовая форма, не указывайте реальные данные. Поле содержит автоподстановку
+        </small>
+      </div>
     </div>
-  </div>
 
-  <div class="form-group row">
-    <%= form.label "Кем выдан паспорт", class: "col-sm-2 col-form-label" %>
-    <div class="col-sm-10">
-      <%= form.text_field :passportIssuedBy, class: "form-control", placeholder: "ОВД По Городу Москва" %>
-      <small  class="form-text text-muted col-form-label">
-        Не указывайте реальные данные.
-      </small>
+    <div class="form-group row ">
+      <%= form.label "Отчество", class: "col-sm-2 col-form-label" %>
+      <div class="col-sm-10">
+        <%= form.text_field :middlename, class: "form-control", placeholder: "Иванович" %>
+
+        <small class="form-text text-muted col-form-label">
+          Это тестовая форма, не указывайте реальные данные. Поле содержит автоподстановку
+        </small>
+      </div>
     </div>
-  </div>
 
-  <div class="form-group row ">
-    <%= form.label "Дата рождения", class: "col-sm-2 col-form-label" %>
-    <div class="col-sm-10">
-      <%= form.date_field :birthDate, class: "form-control" , placeholder: "ГГГГ-ММ-ДД" %>
-      <small  class="form-text text-muted col-form-label">
-        Не указывайте реальные данные.Календарь должен быть нативным
-      </small>
+    <div class="form-group row">
+      <%= form.label :email, class: "col-sm-2 col-form-label" %>
+      <div class="col-sm-10">
+        <%= form.email_field :email, class: "form-control ", placeholder: "ivanov.ivan@mail.com" %>
+
+        <small class="form-text text-muted col-form-label">
+          Это тестовая форма, не указывайте реальные данные. Поле с типом = email и Клавиатура телефона должна
+          адаптироватся.
+        </small>
+      </div>
     </div>
-  </div>
+  <% end %>
 
-  <div class="form-group row ">
-    <%= form.label "Место рождения", class: "col-sm-2 col-form-label" %>
-    <div class="col-sm-10">
-      <%= form.text_field :passportBirthPlace, class: "form-control", placeholder: "гор. Москва"%>
-      <small  class="form-text text-muted col-form-label">
-        Не указывайте реальные данные.
-      </small>
+  <% if params[:step] == "2" %>
+    <div class="form-group row ">
+      <%= form.label "Серия Паспорта", class: "col-sm-2 col-form-label" %>
+      <div class="col-sm-10">
+        <%= form.text_field :passportSeries, class: "form-control", placeholder: "9999" %>
+        <small class="form-text text-muted col-form-label">
+          Это тестовая форма, не указывайте реальные данные.
+        </small>
+      </div>
+    </div>
+
+    <div class="form-group row ">
+      <%= form.label "Номер паспорта", class: "col-sm-2 col-form-label" %>
+      <div class="col-sm-10">
+        <%= form.text_field :passportNumber, class: "form-control", placeholder: "123456" %>
+        <small class="form-text text-muted col-form-label">
+          Это тестовая форма, не указывайте реальные данные.
+        </small>
+      </div>
+    </div>
+
+    <div class="form-group row ">
+      <%= form.label "Дата выдачи паспорта", class: "col-sm-2 col-form-label" %>
+      <div class="col-sm-10">
+        <%= form.date_field :passportIssuedDate, class: "form-control", placeholder: "ГГГГ-ММ-ДД" %>
+        <small class="form-text text-muted col-form-label">
+          Не указывайте реальные данные. Календарь должен быть нативным
+        </small>
+      </div>
 
     </div>
-  </div>
 
-  <div class="form-group row ">
-    <%= form.label "Регион прописки", class: "col-sm-2 col-form-label" %>
-    <div class="col-sm-10">
-      <%= form.text_field :passportRegion, class: "form-control" , placeholder: "Московская Область"%>
-      <small  class="form-text text-muted col-form-label">
-        Не указывайте реальные данные.
-      </small>
+    <div class="form-group row ">
+      <%= form.label "Код подразделения", class: "col-sm-2 col-form-label" %>
+      <div class="col-sm-10">
+        <%= form.text_field :passportIssuedCode, class: "form-control", placeholder: "999-001" %>
+        <small class="form-text text-muted col-form-label">
+          Не указывайте реальные данные.
+        </small>
+      </div>
     </div>
-  </div>
 
-  <div class="form-group row ">
-    <%= form.label "Наименование / ИНН работодателя", class: "col-sm-2 col-form-label" %>
-    <div class="col-sm-10">
-      <%= form.text_field :workinn, class: "form-control" , placeholder: "Введите название, адрес, ИНН или ОГРН"%>
-      <small  class="form-text text-muted col-form-label">
-        Не указывайте реальные данные. Поле содержит автоподстановку
-      </small>
+    <div class="form-group row">
+      <%= form.label "Кем выдан паспорт", class: "col-sm-2 col-form-label" %>
+      <div class="col-sm-10">
+        <%= form.text_field :passportIssuedBy, class: "form-control", placeholder: "ОВД По Городу Москва" %>
+        <small class="form-text text-muted col-form-label">
+          Не указывайте реальные данные.
+        </small>
+      </div>
+    </div>
 
+    <div class="form-group row ">
+      <%= form.label "Дата рождения", class: "col-sm-2 col-form-label" %>
+      <div class="col-sm-10">
+        <%= form.date_field :birthDate, class: "form-control", placeholder: "ГГГГ-ММ-ДД" %>
+        <small class="form-text text-muted col-form-label">
+          Не указывайте реальные данные.Календарь должен быть нативным
+        </small>
+      </div>
     </div>
-  </div>
 
-  <div class="form-group row ">
-    <%= form.label :drafttoken, class: "col-sm-2 col-form-label" %>
-    <div class="col-sm-10">
-      <%= form.text_field :drafttoken, class: "form-control" %>
-    </div>
-  </div>
-    <% end %>
+    <div class="form-group row ">
+      <%= form.label "Место рождения", class: "col-sm-2 col-form-label" %>
+      <div class="col-sm-10">
+        <%= form.text_field :passportBirthPlace, class: "form-control", placeholder: "гор. Москва" %>
+        <small class="form-text text-muted col-form-label">
+          Не указывайте реальные данные.
+        </small>
 
+      </div>
+    </div>
 
-  <div class="form-group row ">
-    <%= form.label "Продукт", class: "col-sm-2 col-form-label" %>
-    <div class="col-sm-10 form-group">
-      <%= form.select :product,['','Карта с Кэшбеком', 'Карта с Грейсом','Кредит наличными','Ипотека'] ,{}, {class: "form-control"}%>
-      <small  class="form-text text-muted col-form-label">
-        Можно выбрать любой продукт
-      </small>
+    <div class="form-group row ">
+      <%= form.label "Регион прописки", class: "col-sm-2 col-form-label" %>
+      <div class="col-sm-10">
+        <%= form.text_field :passportRegion, class: "form-control", placeholder: "Московская Область" %>
+        <small class="form-text text-muted col-form-label">
+          Не указывайте реальные данные.
+        </small>
+      </div>
     </div>
-  </div>
-  <div class="form-group row ">
-    <%= form.label "Желаемый лимит", class: "col-sm-2 col-form-label" %>
-    <div class="col-sm-10">
-      <%= form.number_field :limit, class: "form-control" , placeholder: "50 000"%>
-      <small  class="form-text text-muted col-form-label">
-        Поле для указания желаемого лимита.
-      </small>
-    </div>
-  </div>
 
-  <div class="form-group row ">
-    <%= form.label :deliveryType, class: "col-sm-2 col-form-label" %>
-    <div class="col-sm-10">
-      <%= form.text_field :deliveryType, class: "form-control" , placeholder: "Укажите тип доставки"%>
-    </div>
-  </div>
+    <div class="form-group row ">
+      <%= form.label "Наименование / ИНН работодателя", class: "col-sm-2 col-form-label" %>
+      <div class="col-sm-10">
+        <%= form.text_field :workinn, class: "form-control", placeholder: "Введите название, адрес, ИНН или ОГРН" %>
+        <small class="form-text text-muted col-form-label">
+          Не указывайте реальные данные. Поле содержит автоподстановку
+        </small>
 
-  <div class="form-group row ">
-    <%= form.label "Дата доставки курьером", class: "col-sm-2 col-form-label" %>
-    <div class="col-sm-10">
-      <%= form.date_field :deliveryDate, class: "form-control" , placeholder: "Укажите дату доставки"%>
-      <small  class="form-text text-muted col-form-label">
-        Поле имеет смысл только для доставки
-      </small>
+      </div>
     </div>
-  </div>
-  <div class="form-group row ">
-    <%= form.label "Адрес доставки", class: "col-sm-2 col-form-label" %>
-    <div class="col-sm-10">
-      <%= form.text_field :deliveryAdress, class: "form-control" , placeholder: "Укажите адрес доставки"%>
-      <small  class="form-text text-muted col-form-label">
-        Поле имеет смысл только для доставки
-      </small>
+
+    <div class="form-group row ">
+      <%= form.label :drafttoken, class: "col-sm-2 col-form-label" %>
+      <div class="col-sm-10">
+        <%= form.text_field :drafttoken, class: "form-control" %>
+      </div>
     </div>
-  </div>
+  <% end %>
+
+  <% if params[:step] == "3" %>
+    <div class="form-group row ">
+      <%= form.label "Продукт", class: "col-sm-2 col-form-label" %>
+      <div class="col-sm-10 form-group">
+        <%= form.select :product, ['', 'Карта с Кэшбеком', 'Карта с Грейсом', 'Кредит наличными', 'Ипотека'], {}, {class: "form-control"} %>
+        <small class="form-text text-muted col-form-label">
+          Можно выбрать любой продукт
+        </small>
+      </div>
+    </div>
+    <div class="form-group row ">
+      <%= form.label "Желаемый лимит", class: "col-sm-2 col-form-label" %>
+      <div class="col-sm-10">
+        <%= form.number_field :limit, class: "form-control", placeholder: "50 000" %>
+        <small class="form-text text-muted col-form-label">
+          Поле для указания желаемого лимита.
+        </small>
+      </div>
+    </div>
+  <% end %>
+  <% if params[:step] == "delivery" %>
+    <div class="form-group row ">
+      <%= form.label "Желаемый способ получения продукта", class: "col-sm-2 col-form-label" %>
+      <div class="col-sm-10">
+        <%= form.select :deliveryType, ['', 'Доставка Курьером банка', 'Доставка Почтой', 'Через отделение'], {}, {class: "form-control"} %>
+      </div>
+    </div>
+
+    <div class="form-group row ">
+      <%= form.label "Дата доставки курьером", class: "col-sm-2 col-form-label" %>
+      <div class="col-sm-10">
+        <%= form.date_field :deliveryDate, class: "form-control", placeholder: "ГГГГ-ММ-ДД" %>
+        <small class="form-text text-muted col-form-label">
+          Поле имеет смысл только для доставки
+        </small>
+      </div>
+    </div>
+    <div class="form-group row ">
+      <%= form.label "Адрес доставки", class: "col-sm-2 col-form-label" %>
+      <div class="col-sm-10">
+        <%= form.text_field :deliveryAdress, class: "form-control", placeholder: "Укажите адрес доставки" %>
+        <small class="form-text text-muted col-form-label">
+          Поле имеет смысл только для доставки
+        </small>
+      </div>
+    </div>
+  <% end %>
 
 
 
@@ -223,34 +225,44 @@
 
 
   <div>
-    <%= hidden_field_tag 'step', params[:step]  %>
+    <%= hidden_field_tag 'step', params[:step] %>
   </div>
 
   <div class="progress">
     <% if params[:step] == '1'
          chanse = '40'
+       elsif params[:step] == '2'
+         chanse = '60'
+       elsif params[:step] == '3'
+         chanse = '85'
+
+       elsif params[:step] == 'delivery'
+         chanse = '95'
        else
-         chanse = '75'
+         chanse = '99'
        end
     %>
-    <div class="progress-bar progress-bar-striped" role="progressbar" style="width: <%=chanse.to_i %>%" aria-valuenow=<%=chanse %> aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar progress-bar-striped" role="progressbar" style="width: <%=chanse.to_i %>%" aria-valuenow=<%= chanse %> aria-valuemin="0" aria-valuemax="100">
 
 
-      <%= 'Ваши шансы на продукт' %> <%=chanse %> <%= "%" %>
+      <%= 'Ваши шансы на продукт' %> <%= chanse %> <%= "%" %>
     </div>
   </div>
 
-  <div  >
+  <div>
     <% if params[:step] == '1'
-          sub_text = 'Далее'
-       else
-          sub_text = 'Отправить заявку'
+         sub_text = 'Далее'
+       elsif params[:step] == '2'
+         sub_text = 'Далее'
+       elsif params[:step] == '3'
+         sub_text = 'Отправить заявку'
+       elsif params[:step] == 'delivery'
+         sub_text = 'Готово'
        end
 
 
-
     %>
-    <%= form.submit sub_text,:class => "btn btn-primary btn-block" %>
+    <%= form.submit sub_text, :class => "btn btn-primary btn-block" %>
   </div>
 <% end %>
 
@@ -261,7 +273,7 @@
         params: {parts: ["surname"]},
         count: 3,
         /* Вызывается, когда пользователь выбирает одну из подсказок */
-        onSelect: function(suggestion) {
+        onSelect: function (suggestion) {
             console.log(suggestion);
         }
     });
@@ -272,7 +284,7 @@
         params: {parts: ["name"]},
         count: 3,
         /* Вызывается, когда пользователь выбирает одну из подсказок */
-        onSelect: function(suggestion) {
+        onSelect: function (suggestion) {
             console.log(suggestion);
         }
     });
@@ -283,7 +295,7 @@
         params: {parts: ["patronymic"]},
         count: 3,
         /* Вызывается, когда пользователь выбирает одну из подсказок */
-        onSelect: function(suggestion) {
+        onSelect: function (suggestion) {
             // console.log(suggestion);
         }
     });
@@ -295,7 +307,7 @@
         suggest_local: false,
 
         /* Вызывается, когда пользователь выбирает одну из подсказок */
-        onSelect: function(suggestion) {
+        onSelect: function (suggestion) {
             // console.log(suggestion);
         }
     });
@@ -307,7 +319,7 @@
 
 
         /* Вызывается, когда пользователь выбирает одну из подсказок */
-        onSelect: function(suggestion) {
+        onSelect: function (suggestion) {
             console.log(suggestion);
         }
     });

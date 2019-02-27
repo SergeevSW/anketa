@@ -15,5 +15,6 @@
   <%= @pil.middlename %>
 </p>
 
-<%= link_to 'Edit', edit_pil_path(@pil) %> |
-<%= link_to 'Back', pils_path %>
+<%= link_to 'Редактировать', edit_pil_path(@pil) , :class => " btn btn-secondary"%> |
+<%= link_to 'Вернутся на главную', pils_path , :class => "btn btn-secondary"%>
+<%= link_to 'Указать дату доставки', edit_pil_path(@pil,:step => "delivery"), :class => "btn btn-secondary" %>

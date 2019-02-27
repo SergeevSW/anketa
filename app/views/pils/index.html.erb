@@ -1,13 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<h2>Кредит наличными</h2>
+
+  <h2>Кредит наличными</h2>
+
 
 <table>
   <thead>
     <tr class="border">
-      <th>Lastname</th>
-      <th>Firstname</th>
-      <th>Middlename</th>
+      <th>Ф</th>
+      <th>И</th>
+      <th>О</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,7 +20,7 @@
         <td><%= pil.lastname %></td>
         <td><%= pil.firstname %></td>
         <td><%= pil.middlename %></td>
-        <td><%= link_to 'Открыть', new_pil_path(pil,:step => "1"), :class => "btn btn-secondary"%></td>
+        <td><%= link_to 'Открыть', pil_path(pil,:step => "1"), :class => "btn btn-secondary"%></td>
         <td></td>
         <td><%= link_to 'Редактировать', edit_pil_path(pil,:step => "1"), :class => "btn btn btn-secondary" %></td>
         <td></td>
